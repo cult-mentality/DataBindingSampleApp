@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <!--variables to use in the layout-->
+        <variable
+            name="teacher"
+            type="com.example.application.includedLayout.Teacher" />
+    </data>
+
+    <!--    use xmlns:bind property to use bind to bind data to included layout-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/main_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the main Layout"
+             />
+
+        <!--        bind data to your included layout-->
+        <include
+            layout="@layout/included_layout"
+            bind:teacher="@{teacher}" />
+
+    </LinearLayout>
+</layout>
